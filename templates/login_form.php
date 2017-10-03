@@ -14,3 +14,6 @@
 <div>
     or <a href="register.php">register</a> for an account
 </div>
+<div>
+	If you forget your password you can <a href="reset.php">recover</a> it.
+</div>

@@ -34,7 +34,11 @@
 
         if (!empty($result)) {
             apologize("username is invalid");
-        } else {
+        }
+		$result = query("SELECT * FROM users WHERE email = ?", $email);
+		if (!empty($result)) {
+			apologize("Email already use");
+		} else {
 			$sql = query("INSERT INTO users (username, hash, cash, email) values (?, ?, 10000.0000, ?)",
 						$username, password_hash($password, PASSWORD_BCRYPT), $email);
         }
